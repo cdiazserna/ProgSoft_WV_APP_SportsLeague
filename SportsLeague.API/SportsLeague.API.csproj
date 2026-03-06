@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="Middlewares\" />
+    <Folder Include="Middlewares\" />
   </ItemGroup>
 
 </Project>
