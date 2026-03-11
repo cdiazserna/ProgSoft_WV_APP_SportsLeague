@@ -17,6 +17,7 @@ namespace SportsLeague.DataAccess.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            // ── Team Configuration ──
             modelBuilder.Entity<Team>(entity =>
             {
                 entity.HasKey(t => t.Id);
