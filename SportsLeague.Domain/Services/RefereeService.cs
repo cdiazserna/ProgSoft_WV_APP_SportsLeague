@@ -30,7 +30,9 @@ namespace SportsLeague.Domain.Services
             var referee = await _refereeRepository.GetByIdAsync(id);
 
             if (referee == null)
+            {
                 _logger.LogWarning("Referee with ID {RefereeId} not found", id);
+            }
 
             return referee;
         }
