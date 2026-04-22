@@ -1,7 +1,4 @@
 ﻿using SportsLeague.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SportsLeague.Domain.Entities
 {
@@ -18,5 +15,7 @@ namespace SportsLeague.Domain.Entities
 
         // Navigation Property
         public Team Team { get; set; } = null!;
+        public ICollection<Goal> Goals { get; set; } = new List<Goal>();
+        public ICollection<Card> Cards { get; set; } = new List<Card>();
     }
 }
