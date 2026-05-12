@@ -167,11 +167,11 @@ namespace SportsLeague.Domain.Services
                 .GroupBy(g => new { g.PlayerId, g.Player.FirstName, g.Player.LastName, g.Player.TeamId })
                 .Select(group => new
                 {
-                    PlayerId = group.Key.PlayerId,
+                    group.Key.PlayerId,
                     PlayerName = group.Key.FirstName + " " + group.Key.LastName,
                     TeamName = group.First().Player.Team?.Name ?? "N/A",
                     Goals = group.Count(),
-                    Penalties = group.Count(g => g.Type == Enums.GoalType.Penalty),
+                    Penalties = group.Count(g => g.Type == GoalType.Penalty),
                     MatchesWithGoals = group.Select(g => g.MatchId).Distinct().Count()
                 })
                 .OrderByDescending(s => s.Goals)
